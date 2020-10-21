@@ -1,0 +1,18 @@
+
+  <h4>  Categories list</h4>
+  <div class="row">
+  <% @categories.each do |category| %>
+      <div class="column is-2 category ">
+          <span> Photos: </span>  <%= image_tag category.image.url, style: 'height: 150px;' %>
+        <div class="category-content">
+          <span class="tag is-link"> Name : </span> <h3> <%= category.name %> </h3> <br>
+          <span class="tag is-info"> Description: </span> <p> <%= category.description %></p> <br>
+          <%= link_to 'Edit', edit_category_path(category) %>
+          <%= link_to 'Delete ', category_path(category),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: red" %>
+        </div>
+       </div>
+  <% end %>
+  </div>
+

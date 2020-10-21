@@ -1,0 +1,30 @@
+
+<div class="container p-5" style="width: 500px;">
+
+
+  <%= form_for @category, html: {multipart: true} do |f|  %>
+    <div class="field">
+      <%= f.label :name %>
+      <div class="control">
+        <%= f.text_field :name, class: "input", placeholder: "enter the name of category" %>
+    </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "input", placeholder: "Add some description" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :image %> <br>
+      <%= f.file_field :image, placeholder: "Add the image" %>
+      </div>
+    </div>̵
+  <%= f.submit %>
+
+  <% end %>̵
+
+</div>

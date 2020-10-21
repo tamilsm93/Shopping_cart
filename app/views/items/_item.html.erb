@@ -1,0 +1,22 @@
+<h4>  Item list</h4>
+  <div class="row">
+  <% @items.each do |item| %>
+    <div class="col-2 item">
+          <span> Photos: </span>  <%= image_tag item.image.url, style: 'height: 150px; padding: 10px;' %>
+      <div class="item-content">
+        <span class="tag is-light"> Category.name </span> <p style="margin-top: 5px;"> <%= Category.find(item.category_id).name %></p>
+        <span class="tag is-primary" style="margin-top: 15px;">  Name : </span> <p><%= item.name %> </p>
+        <span class="tag is-info" style="margin-top: 15px;"> Description: </span> <p><%= item.description %> </p> <br>
+        <span class="tag is-warning" style="margin-top: 15px;"> Price: </span> <p><%= item.price %> </p> <br>
+        <span class="tag is-danger">  Brand name: </span> <p> <%= item.brand %> </p> <br>
+      </div>
+        <div class="item-edit">
+          <%= link_to 'Edit', edit_item_path(item, id: item.id) %>
+          <%= link_to 'show', item_path(item, id: item.id), style: "margin-left: 35px; color: yellow" %>
+          <%= link_to 'Delete', item_path(item),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: red" %>
+        </div>
+      </div>
+  <% end %>
+</div>

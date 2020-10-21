@@ -1,0 +1,32 @@
+
+
+
+<div class="row pt-5">
+
+  <h4>  Item list</h4>
+  <% if @category_items.present? %>
+  <% @category_items.each do |item| %>
+      <div class="column is-2 item">
+        <div class="row">
+          <span> Photos: </span>  <%= image_tag item.image.url, style: 'height: 150px; padding: 10px;' %>
+        </div>
+      <div class="item-content pt-3">
+        <br>
+        <span> Category.name </span> <h3> <%= Category.find(item.category_id).name %></h3>
+        <span class="tag tag-primary"> Item name : </span> <p><%= item.name %> </p>
+        <span> Item Description: </span> <p><%= item.description %> </p>
+        <span> Item price: </span> <p><%= item.price %> </p>
+        <span> Item brand name: </span> <p> <%= item.brand %> </p>
+        <div class="item-edit">
+          <%= link_to 'Edit', edit_item_path(item) %>
+          <%= link_to 'Delete', item_path(item),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: red" %>
+        </div>
+      </div>
+      </div>
+    <% end %>
+    <% else %>
+      <p> No Item is present for this categories</p>
+  <% end %>
+</div>

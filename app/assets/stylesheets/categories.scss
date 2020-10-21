@@ -1,0 +1,16 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.category {
+  margin-top: 100px;
+  border: solid 3px darkblue;
+  background-color: paleturquoise;
+  margin-left: 100px;
+  overflow: hidden;
+}
+
+.category-content {
+  padding: 18px;
+  margin-top: 10px;
+}

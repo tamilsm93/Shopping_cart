@@ -1,0 +1,22 @@
+<%#= render 'items/item' %>
+
+
+<div class="container pt-5">
+
+  <h4>  Item list</h4>
+    <div class="item">
+      <div class="col-md-4 pt-3">
+        <div class="row">
+          <span> Photos: </span>  <%= image_tag @item.image.url, style: 'height: 150px; padding: 10px;' %>
+        </div>
+      </div>
+      <div class="item-content pt-3">
+        <br>
+        <span> Category.name </span> <h3> <%= Category.find(@item.category_id).name %></h3>
+        <span class="tag tag-primary"> Item name : </span> <p><%= @item.name %> </p>
+        <span> Item Description: </span> <p><%= @item.description %> </p>
+        <span> Item price: </span> <p><%= @item.price %> </p>
+        <span> Item brand name: </span> <p> <%= @item.brand %> </p>
+      </div>
+    </div>
+</div>

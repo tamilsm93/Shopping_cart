@@ -1,0 +1,55 @@
+
+<div class="container pt-5" style="width: 500px;">
+
+
+  <%= form_with model: @item, html: {multipart: true, id: "#{@item.id}"} do |f|  %>
+
+    <%= hidden_field_tag :id, @item.id %>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :select_category %>
+      <%= f.select(:category_id, options_for_select(@categories), prompt: 'select one') %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "input", placeholder: "enter the name of category"  %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "input", placeholder: "Add some description" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :Brand_name %>
+      <%= f.text_field :brand, class: "input", placeholder: "Enter the price of the item" %>
+      </div>
+    </div>̵
+    <div class="field">
+      <div class="control">
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "input", placeholder: "Enter the brand name of the item" %>
+      </div>
+    </div>̵
+
+    <div class="field">
+      <div class="control">
+      <%= f.label :image %>
+      <%= f.file_field :image, placeholder: "Add the image" %>
+    </div>
+    </div>̵
+
+
+    <%= f.submit %>
+
+  <% end %>̵
+
+</div>
