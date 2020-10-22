@@ -30,7 +30,8 @@
     <% end %>
     <% else %>
     <div class="itemNot">
-      <p> No Item is present for this categories</p>
+    <p> <%= @category_missing.name %> added no item so far click below </p>
+      <%= link_to ' create New Item',new_item_path %>
     </div>
   <% end %>
 </div>

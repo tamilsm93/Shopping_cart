@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
-    binding.pry
+
 
     redirect_to categories_path
    
@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
 
   def category_items
     @category_items = @category.items
+    @category_missing = @category
   end
 
   def update
