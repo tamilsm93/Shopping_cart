@@ -6,21 +6,21 @@
     <div class="field">
       <%= f.label :name %>
       <div class="control">
-        <%= f.text_field :name, class: "input", placeholder: "enter the name of category" %>
+        <%= f.text_field :name, class: "input", placeholder: "enter the name of category", required: "true" %>
     </div>
     </div>
 
     <div class="field">
       <div class="control">
       <%= f.label :description %>
-      <%= f.text_field :description, class: "input", placeholder: "Add some description" %>
+      <%= f.text_field :description, class: "input", placeholder: "Add some description", required: "true" %>
       </div>
     </div>
 
     <div class="field">
       <div class="control">
       <%= f.label :image %> <br>
-      <%= f.file_field :image, placeholder: "Add the image" %>
+      <%= f.file_field :image, placeholder: "Add the image", required: "true" %>
       </div>
     </div>̵
   <%= f.submit %>

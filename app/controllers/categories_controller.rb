@@ -26,7 +26,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_items
-
     @category_items = @category.items
   end
 

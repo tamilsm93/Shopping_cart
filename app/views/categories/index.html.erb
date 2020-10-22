@@ -1,12 +1,22 @@
 
   <h4>  Categories list</h4>
+  <div class="row" style="margin-top: 50px;  margin-left: 50px;">
+    <%= link_to "click to Create New Category", new_category_path %>
+  </div>
+
   <div class="row">
   <% @categories.each do |category| %>
-      <div class="column is-2 category ">
-          <span> Photos: </span>  <%= image_tag category.image.url, style: 'height: 150px;' %>
+      <div class="column is-2 category" >
+        <div class="category-image" style="padding: 15px;">
+          <% if category.image.url.present? %>
+          <%= image_tag category.image.url, style: 'height: 150px;' %>
+            <% end %>
+        </div>
+        <div class="category-details" style="padding: 10px;">
+        <span class="tag is-link"> Category : </span> <h3> <%= category.name %> </h3> <br>
+        <span class="tag is-info"> Description: </span> <p> <%= category.description %></p> <br>
+        </div>
         <div class="category-content">
-          <span class="tag is-link"> Name : </span> <h3> <%= category.name %> </h3> <br>
-          <span class="tag is-info"> Description: </span> <p> <%= category.description %></p> <br>
           <%= link_to 'Edit', edit_category_path(category) %>
           <%= link_to 'Delete ', category_path(category),
                       method: :delete,

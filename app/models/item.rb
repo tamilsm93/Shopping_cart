@@ -5,6 +5,8 @@ class Item < ApplicationRecord
 
     belongs_to :category
 
+    validates :name, :description, :brand, :price, presence: true
+
     extend FriendlyId
 
     friendly_id :name, use: :slugged

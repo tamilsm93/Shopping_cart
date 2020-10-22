@@ -1,9 +1,11 @@
 
-
-
+<nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs" style="margin-left: 80px; max-width: 250px;">
+  <ul>
+    <li> <%= link_to "Back Categories", categories_path %></li>
+    <li> <%= link_to "Back Items", items_path %> </li>
+  </ul>
+</nav>
 <div class="row pt-5">
-
-  <h4>  Item list</h4>
   <% if @category_items.present? %>
   <% @category_items.each do |item| %>
       <div class="column is-2 item">

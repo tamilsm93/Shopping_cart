@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  root :to => 'categories#index'
+
   get 'category_items', to: 'categories#category_items'
 
   resources :items

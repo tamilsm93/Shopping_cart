@@ -4,6 +4,9 @@ class Category < ApplicationRecord
 
  has_many  :items, dependent: :delete_all
 
+
+ validates :name, :description,  presence: true
+
  mount_uploader :image, ImageUploader
 
  def detail

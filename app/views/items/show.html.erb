@@ -1,22 +1,28 @@
-<%#= render 'items/item' %>
 
 
 <div class="container pt-5">
 
-  <h4>  Item list</h4>
+
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs" style=" margin-left: 80px; max-width: 250px;">
+    <ul>
+      <li> <%= link_to Category.find(@item.category_id).name, category_items_path(id: Category.find(@item.category_id)) %> </li>
+      <li> <%= link_to @item.brand %></li>
+     <li> <%= link_to "Back Items", items_path %> </li>
+    </ul>
+  </nav>
     <div class="item">
       <div class="col-md-4 pt-3">
         <div class="row">
-          <span> Photos: </span>  <%= image_tag @item.image.url, style: 'height: 150px; padding: 10px;' %>
+            <%= image_tag @item.image.url, style: 'height: 150px; padding: 10px;' %>
+           <span class="tag is-link" style="margin-top: 15px"> Item Description: </span> <p><%= @item.description %> </p>
         </div>
       </div>
       <div class="item-content pt-3">
         <br>
         <span> Category.name </span> <h3> <%= Category.find(@item.category_id).name %></h3>
-        <span class="tag tag-primary"> Item name : </span> <p><%= @item.name %> </p>
-        <span> Item Description: </span> <p><%= @item.description %> </p>
-        <span> Item price: </span> <p><%= @item.price %> </p>
-        <span> Item brand name: </span> <p> <%= @item.brand %> </p>
+        <span class="tag tag-primary" style="margin-top: 15px"> Item name : </span> <p><%= @item.name %> </p>
+        <span class="tag is-success is-light" style="margin-top: 15px"> Item price: </span> <p><%= @item.price %> </p>
+        <span class="tag is-danger is-light" style="margin-top: 15px"> Item brand name: </span> <p> <%= @item.brand %> </p>
       </div>
     </div>
 </div>
