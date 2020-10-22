@@ -1,5 +1,4 @@
 
-  <h4>  Categories list</h4>
   <div class="row" style="margin-top: 50px;  margin-left: 50px;">
     <%= link_to "click to Create New Category", new_category_path %>
   </div>
@@ -7,9 +6,10 @@
   <div class="row">
   <% @categories.each do |category| %>
       <div class="column is-2 category" >
+        <div class="category-catalog">
         <div class="category-image" style="padding: 15px;">
           <% if category.image.url.present? %>
-          <%= image_tag category.image.url, style: 'height: 150px;' %>
+          <%= image_tag category.image.url, style: 'height: 160px;' %>
             <% end %>
         </div>
         <div class="category-details" style="padding: 10px;">
@@ -21,6 +21,7 @@
           <%= link_to 'Delete ', category_path(category),
                       method: :delete,
                       data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: red" %>
+        </div>
         </div>
        </div>
   <% end %>

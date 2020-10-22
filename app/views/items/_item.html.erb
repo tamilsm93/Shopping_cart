@@ -1,26 +1,27 @@
-<h4>  Item list</h4>
 <div class="row" style="margin-top: 50px;  margin-left: 50px;">
   <%= link_to "click to Create New items", new_item_path %>
 </div>
   <div class="row">
   <% @items.each do |item| %>
-    <div class="col-2 item">
-      <div class="item-image" style="padding: 20px;">
-        <%= image_tag item.image.url, style: 'height: 150px;' %>
-      </div>
-      <div class="item-content">
-        <span class="tag is-primary" style="margin-top: 15px;">  Name : </span> <p><%= item.name %> </p>
-        <span class="tag is-info" style="margin-top: 15px;"> Description: </span> <p><%= item.description %> </p> <br>
-        <span class="tag is-warning" style="margin-top: 15px;"> Price: </span> <p><%= item.price %> </p> <br>
-        <span class="tag is-danger">  Brand name: </span> <p> <%= item.brand %> </p> <br>
-      </div>
-        <div class="item-edit">
+    <div class="col-3 item">
+      <div class="item-catalog">
+        <div class="item-image" style="padding: 20px;">
+          <%= image_tag item.image.url, style: 'height: 200px;' %>
+        </div>
+        <div class="item-content" style="margin-left: 10px;">
+          <span class="tag is-primary" style="margin-top: 15px;">  Name : </span> <p><%= item.name %> </p>
+          <span class="tag is-info" style="margin-top: 15px;"> Description: </span> <p><%= item.description %> </p> <br>
+          <span class="tag is-warning" style="margin-top: 15px;"> Price: </span> <p><%= item.price %> </p> <br>
+          <span class="tag is-danger">  Brand name: </span> <p> <%= item.brand %> </p> <br>
+        </div>
+        <div class="item-edit" style="padding: 15px;">
           <%= link_to 'Edit', edit_item_path(item, id: item.id) %>
           <%= link_to 'show', item_path(item, id: item.id), style: "margin-left: 35px; color: yellow" %>
           <%= link_to 'Delete', item_path(item),
                       method: :delete,
-                      data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: red" %>
+                      data: { confirm: 'Are you sure?' }, style: "margin-left: 35px; color: darkviolet" %>
         </div>
+      </div>
       </div>
   <% end %>
 </div>

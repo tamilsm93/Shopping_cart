@@ -10,15 +10,15 @@
   <% @category_items.each do |item| %>
       <div class="column is-2 item">
         <div class="row">
-          <span> Photos: </span>  <%= image_tag item.image.url, style: 'height: 150px; padding: 10px;' %>
+        <%= image_tag item.image.url, style: 'height: 150px; padding: 10px;' %>
         </div>
-      <div class="item-content pt-3">
+      <div class="item-content">
         <br>
         <span> Category.name </span> <h3> <%= Category.find(item.category_id).name %></h3>
         <span class="tag tag-primary"> Item name : </span> <p><%= item.name %> </p>
-        <span> Item Description: </span> <p><%= item.description %> </p>
-        <span> Item price: </span> <p><%= item.price %> </p>
-        <span> Item brand name: </span> <p> <%= item.brand %> </p>
+        <span class="tag is-success is-light"> Item Description: </span> <p><%= item.description %> </p>
+        <span class="tag is-warning"> Item price: </span> <p><%= item.price %> </p>
+        <span class="tag is-success"> Item brand name: </span> <p> <%= item.brand %> </p>
         <div class="item-edit">
           <%= link_to 'Edit', edit_item_path(item) %>
           <%= link_to 'Delete', item_path(item),
