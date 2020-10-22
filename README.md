@@ -29,3 +29,10 @@ step2: install postgres if not
 step3: rake db:create && rake db:migrate
 step4: use ruby and rails version same as gemfile version
 step5: rails s
+
+For running test cases:
+rake db:create RAILS_ENV=test
+rake db:migrate RAILS_ENV=test
+controller test only
+rails test test/controllers/categories_controller_test.rb
+rails test test/controllers/items_controller_test.rb
