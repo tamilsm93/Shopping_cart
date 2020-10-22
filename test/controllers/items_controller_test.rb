@@ -16,7 +16,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
         brand: "nike",
         slug: "-"
       }}
-  assert_response :success
+      assert_redirected_to items_path
     end
 end
 end
