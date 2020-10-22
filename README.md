@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+For local setup
+step1: bundle install
+step2: install postgres if not
+step3: rake db:create && rake db:migrate
+step4: use ruby and rails version same as gemfile version
+step5: rails s
