@@ -24,6 +24,11 @@ Things you may want to cover:
 * ...
 
 For local setup
+use ruby '2.7.0'
+
+
+use 'rails', '~> 6.0.3', '>= 6.0.3.4'
+
 step1: bundle install
 step2: install postgres if not
 step3: rake db:create && rake db:migrate
